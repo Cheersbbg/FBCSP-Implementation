@@ -89,7 +89,7 @@ def extract_motor_imagery_trials(subject_no = None,fs = 250,training = True,t_st
 
 
 
-def load_evaluation_trials(subject_no,fs = 250,t_start = -4.5,t_end = 4.5):
+def load_evaluation_trials(subject_no,data_dir,labels_dir,fs = 250,t_start = -4.5,t_end = 4.5):
     events,events_dict,recording = load_events(subject_no,training = False)
 
     evaluation_trials = []

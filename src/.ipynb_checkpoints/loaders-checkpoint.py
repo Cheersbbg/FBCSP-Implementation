@@ -5,11 +5,11 @@ import numpy as np
 from scipy.io import loadmat
 
 # By default loading the trials belonging to training data. Set training = False if you would like to load the evaluation data
-def load_events(subject_no = None,training = True,recording = None):
+def load_events(subject_no = None,training = True,recording = None,data_dir = 'GDF Files'):
     if training:
-        recording_path = f'GDF Files/A0{subject_no}T.gdf'
+        recording_path = f'{data_dir}/A0{subject_no}T.gdf'
     else:
-        recording_path = f'GDF Files/A0{subject_no}E.gdf'
+        recording_path = f'{data_dir}/A0{subject_no}E.gdf'
 
     if not recording:
         recording = mne.io.read_raw_gdf(recording_path,preload = True)
@@ -89,8 +89,8 @@ def extract_motor_imagery_trials(subject_no = None,fs = 250,training = True,t_st
 
 
 
-def load_evaluation_trials(subject_no,fs = 250,t_start = -4.5,t_end = 4.5):
-    events,events_dict,recording = load_events(subject_no,training = False)
+def load_evaluation_trials(subject_no,data_dir = 'GDF Files',labels_dir = 'Evaluation Labels',fs = 250,t_start = -4.5,t_end = 4.5):
+    events,events_dict,recording = load_events(subject_no,training = False,data_dir = data_dir)
 
     evaluation_trials = []
     
@@ -109,7 +109,7 @@ def load_evaluation_trials(subject_no,fs = 250,t_start = -4.5,t_end = 4.5):
             
             evaluation_trials.append(extracted_trial)
 
-    evaluation_labels = loadmat(f'Evaluation Labels/A0{subject_no}E.mat')['classlabel'][:,0] - 1
+    evaluation_labels = loadmat(f'{labels_dir}/A0{subject_no}E.mat')['classlabel'][:,0] - 1
 
     return np.array(evaluation_trials),evaluation_labels
     

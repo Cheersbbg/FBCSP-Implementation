@@ -14,3 +14,12 @@ And then download the labels of the evaluation datasets here: https://www.bbci.d
 By default when loading motor imagery trials from the GDF Files, the default parameter for the directory in which they are stored in is called "GDF Files". This may be changed with the "data_dir" keyword parameter. 
 
 
+When loading in data with the "load_motor_imagery_trials" make sure to specify which directory the GDF files are in with the "data_dir" key word command. 
+
+With the "load_evaluation_trials" function please also specifiy which directory the evaluation trials, and the evaluation labels are in with the data_dir and labels_dir keyword parameters. 
+
+
+
+The requirements.txt file is included so that you can use the same conda environment I was using while this code was written. 
+
+

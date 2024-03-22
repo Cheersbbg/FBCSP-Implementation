@@ -89,8 +89,13 @@ def extract_motor_imagery_trials(subject_no = None,fs = 250,training = True,t_st
 
 
 
+<<<<<<< HEAD
 def load_evaluation_trials(subject_no,data_dir = 'GDF Files',labels_dir = 'Evaluation Labels',fs = 250,t_start = -4.5,t_end = 4.5):
     events,events_dict,recording = load_events(subject_no,training = False,data_dir = data_dir)
+=======
+def load_evaluation_trials(subject_no,data_dir,labels_dir,fs = 250,t_start = -4.5,t_end = 4.5):
+    events,events_dict,recording = load_events(subject_no,training = False)
+>>>>>>> ebf8b6d6f7f4d11ce601954f3f4cbc86fdd685a0
 
     evaluation_trials = []
     

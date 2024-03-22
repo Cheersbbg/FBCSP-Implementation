@@ -23,3 +23,6 @@ With the "load_evaluation_trials" function please also specifiy which directory 
 The requirements.txt file is included so that you can use the same conda environment I was using while this code was written. 
 
 
+To see how the code is all used together, please see "Model Validation.ipynb"
+
+

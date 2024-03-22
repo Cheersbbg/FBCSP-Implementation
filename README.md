@@ -7,6 +7,10 @@
 
 ### Usage
 
-First, make sure to download the training and evaluation files from BCI Competition IV IIa with the link below:
+First, make sure to download the training and evaluation files from BCI Competition IV IIa with this link: https://bbci.de/competition/iv/download/
+
+And then download the labels of the evaluation datasets here: https://www.bbci.de/competition/iv/results/ds2a/true_labels.zip
+
+By default when loading motor imagery trials from the GDF Files, the default parameter for the directory in which they are stored in is called "GDF Files". This may be changed with the "data_dir" keyword parameter. 
 
 
